@@ -111,17 +111,17 @@ legend.onAdd = function (map) {
 
 legend.addTo(map);
 
-//title
+// //title
 
-var title = L.Control.extend({
-    options: {
-        position: 'topleft' // We'll adjust with CSS
-    },
-    onAdd: function (map) {
-    var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
-        container.innerHTML = '<h1 id="map-title">My Map Title</h1>'; // Add your title HTML
-        return container;
-    }
-});
+// var title = L.Control.extend({
+//     options: {
+//         position: 'topleft' // We'll adjust with CSS
+//     },
+//     onAdd: function (map) {
+//     var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+//         container.innerHTML = '<h1 id="map-title">My Map Title</h1>'; // Add your title HTML
+//         return container;
+//     }
+// });
 
-map.addControl(new title());
+// map.addControl(new title());
