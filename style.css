@@ -1,0 +1,66 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+#map {
+    height: calc(100% - 60px); 
+    width: 100%;
+}
+
+#map1 {
+    height: calc(100% - 60px); 
+    width: 100%;
+}
+
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+/* womp */
+
+/* In your CSS file or within a <style> tag */
+.leaflet-control-custom {
+    padding: 5px; /* Adjust as needed */
+    background-color: white; /* Or any styling you want */
+    border-radius: 5px;
+    /* Other styling... */
+}
+
+#map-title {
+    margin: 0; /* Remove default h1 margins */
+}
+
+/* Position it in the middle of the top */
+.leaflet-top .leaflet-control-custom { /* Target controls in the top container */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    top: 10px;  /* Adjust vertical position from the top */
+}
