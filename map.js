@@ -1,10 +1,30 @@
 
-var map = L.map('map').setView([37.8, -96], 4);
+var map = L.map('map').setView([40.73, -74], 11); // Ensure 'map' is defined and has a div in your html with id="map"
 
-var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+    tileSize: 512,
+    maxZoom: 18,
+    zoomOffset: -1,
+    id: 'mick756/cm7fk5t0x000001t248r8e7yo', // Your Mapbox style ID
+    accessToken: 'pk.eyJ1IjoibWljazc1NiIsImEiOiJjbTdmaHhucTIwdDdxMmpwdTNsdXJhOTk1In0.fWczw0xPLzKvY7fdr7FNFA' // Your Mapbox access token
 }).addTo(map);
+
+// var map = L.map('map').setView([37.8, -96], 4);
+
+// var tiles = L.tileLayer({'https://api.mapbox.com/styles/v1/mick756/cm7fk5t0x000001t248r8e7yo.html?title=copy&access_token=pk.eyJ1IjoibWljazc1NiIsImEiOiJjbTdmaHhucTIwdDdxMmpwdTNsdXJhOTk1In0.fWczw0xPLzKvY7fdr7FNFA&zoomwheel=true&fresh=true#11/40.73/-74'}, { 
+//     maxZoom: 19}).addTo(map);
+//     // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+
+
+// mapboxgl.accessToken = 'pk.eyJ1IjoibWljazc1NiIsImEiOiJjbTdmaHhucTIwdDdxMmpwdTNsdXJhOTk1In0.fWczw0xPLzKvY7fdr7FNFA';
+//     const map = new mapboxgl.Map({
+//         container: 'map',
+//         style: 'mapbox://styles/mick756/cm7fk5t0x000001t248r8e7yo',
+//         projection: 'globe', // Display the map as a globe, since satellite-v9 defaults to Mercator
+//         zoom: 1,
+//         center: [30, 15]
+//     });
 
 var geoJson;
 
