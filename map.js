@@ -1,5 +1,5 @@
 
-var map = L.map('map').setView([40.73, -74], 11); // Ensure 'map' is defined and has a div in your html with id="map"
+var map = L.map('map').setView([39.9, -95.7], 5); // Ensure 'map' is defined and has a div in your html with id="map"
 
 var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
@@ -10,22 +10,6 @@ var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
     accessToken: 'pk.eyJ1IjoibWljazc1NiIsImEiOiJjbTdmaHhucTIwdDdxMmpwdTNsdXJhOTk1In0.fWczw0xPLzKvY7fdr7FNFA' // Your Mapbox access token
 }).addTo(map);
 
-// var map = L.map('map').setView([37.8, -96], 4);
-
-// var tiles = L.tileLayer({'https://api.mapbox.com/styles/v1/mick756/cm7fk5t0x000001t248r8e7yo.html?title=copy&access_token=pk.eyJ1IjoibWljazc1NiIsImEiOiJjbTdmaHhucTIwdDdxMmpwdTNsdXJhOTk1In0.fWczw0xPLzKvY7fdr7FNFA&zoomwheel=true&fresh=true#11/40.73/-74'}, { 
-//     maxZoom: 19}).addTo(map);
-//     // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-
-
-// mapboxgl.accessToken = 'pk.eyJ1IjoibWljazc1NiIsImEiOiJjbTdmaHhucTIwdDdxMmpwdTNsdXJhOTk1In0.fWczw0xPLzKvY7fdr7FNFA';
-//     const map = new mapboxgl.Map({
-//         container: 'map',
-//         style: 'mapbox://styles/mick756/cm7fk5t0x000001t248r8e7yo',
-//         projection: 'globe', // Display the map as a globe, since satellite-v9 defaults to Mercator
-//         zoom: 1,
-//         center: [30, 15]
-//     });
-
 var geoJson;
 
 fetch('https://leafletjs.com/examples/choropleth/us-states.js')
@@ -35,14 +19,14 @@ fetch('https://leafletjs.com/examples/choropleth/us-states.js')
     });
 
 function getColor(d) {
-    return d > 1000 ? '#800026' :
-    d > 500  ? '#BD0026' :
-    d > 200  ? '#E31A1C' :
-    d > 100  ? '#FC4E2A' :
-    d > 50   ? '#FD8D3C' :
-    d > 20   ? '#FEB24C' :
-    d > 10   ? '#FED976' :
-               '#FFEDA0';
+    return d > 1000 ? '#084995' :
+    d > 500  ? '#1a64a7' :
+    d > 200  ? '#317fb9' :
+    d > 100  ? '#5c9acb' :
+    d > 50   ? '#87b5db' :
+    d > 20   ? '#b2d0e9' :
+    d > 10   ? '#ddebf7' :
+               '#f0f8ff';
 }
 
 function style(feature) {
@@ -52,7 +36,7 @@ function style(feature) {
         opacity: 1,
         color: 'white',
         dashArray: '3',
-        fillOpacity: 0.7
+        fillOpacity: 0.6
     };
 }
 
